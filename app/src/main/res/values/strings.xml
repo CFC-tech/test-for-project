@@ -10,4 +10,13 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="back_to_login_html"><b><u>Back to Login</u></b></string>
+    <string name="let_s_create_yoour_account">Let\'s Create Yoour Account</string>
+    <string name="todo">TODO</string>
+    <string name="full_name">Full Name</string>
+    <string name="email_address">Email Address</string>
+    <string name="password">Password</string>
+    <string name="retype_password">Retype Password</string>
+    <string name="i_agree_to_the_team_privacy">I agree to the Team @ Privacy</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="have_an_account_sign_in">Have an account? Sign in</string>
 </resources>
