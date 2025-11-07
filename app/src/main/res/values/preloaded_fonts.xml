@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/abhaya_libre</item>
+        <item>@font/abhaya_libre_medium</item>
+        <item>@font/aguafina_script</item>
+        <item>@font/aladin</item>
+        <item>@font/alex_brush</item>
+        <item>@font/allan</item>
+        <item>@font/almendra_display</item>
+        <item>@font/alumni_sans_pinstripe</item>
+        <item>@font/anybody</item>
+        <item>@font/arsenal</item>
+        <item>@font/asset</item>
+        <item>@font/bakbak_one</item>
+        <item>@font/zen_dots</item>
+    </array>
+</resources>
