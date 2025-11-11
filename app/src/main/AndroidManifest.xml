@@ -18,10 +18,10 @@
             android:exported="false" />
         <activity
             android:name=".CakeCreateAccount"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".ForgetPassword"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
