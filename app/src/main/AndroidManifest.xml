@@ -12,19 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyAPP">
         <activity
-            android:name=".LoginBinding"
+            android:name=".auth.CakeCreateAccount"
             android:exported="false" />
         <activity
-            android:name=".CakeCreateAccount"
-            android:exported="true" />
-        <activity
-            android:name=".ForgetPassword"
-            android:exported="true" />
+            android:name=".auth.ForgetPassword"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".CakeLogin"
+            android:name=".auth.CakeLogin"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,7 +1,8 @@
-package com.example.myapp
+package com.example.myapp.auth
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.myapp.R
 
 class CakeLogin : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

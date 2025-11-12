@@ -19,4 +19,6 @@
     <string name="i_agree_to_the_team_privacy">I agree to the Team @ Privacy</string>
     <string name="sign_up">Sign Up</string>
     <string name="have_an_account_sign_in">Have an account? Sign in</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
