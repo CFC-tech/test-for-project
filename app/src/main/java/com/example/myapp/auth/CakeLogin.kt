@@ -10,6 +10,17 @@ class CakeLogin : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
+
+        binding.btcreate.setOnClickListener {
+            startActivity(
+                android.content.Intent(
+                    this,
+                    CakeCreateAccount::class.java
+                )
+            )
+        }
+
+
         setContentView(binding.root)
     }
 }
