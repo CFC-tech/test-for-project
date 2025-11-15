@@ -74,7 +74,8 @@
         android:background="@drawable/bg_background"
         android:fontFamily="@font/abhaya_libre_medium"
         android:hint="Email or Phone"
-        android:inputType="text"
+        android:autofillHints="emailAddress"
+        android:inputType="textEmailAddress|textNoSuggestions"
         android:minHeight="48dp"
         android:paddingStart="20dp"
         android:textAllCaps="false"
@@ -159,7 +160,7 @@
         app:layout_constraintVertical_bias="1.0">
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button4"
+            android:id="@+id/btLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="80dp"
