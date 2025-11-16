@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.edit
 import androidx.core.widget.addTextChangedListener
+import com.example.myapp.MainActivity
 import com.example.myapp.databinding.ActivityCreateAccountBinding
 import com.google.firebase.auth.FirebaseAuth
 
@@ -71,13 +72,13 @@ class CakeCreateAccount : AppCompatActivity() {
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
                         Toast.makeText(this, "Registered successfully for $name", Toast.LENGTH_SHORT).show()
-                        val sharedPref = getSharedPreferences("SaveInfo", MODE_PRIVATE)
-                        sharedPref.edit {
-                            putString("email", email)
-                            putString("password", password)
-                            putBoolean("isChecked", true)
-                            apply()
-                        }
+//                        val sharedPref = getSharedPreferences("SaveInfo", MODE_PRIVATE)
+//                        sharedPref.edit {
+//                            putString("email", email)
+//                            putString("password", password)
+//                            putBoolean("isChecked", true)
+//                            apply()
+//                        }
                         startActivity(Intent(this, CakeLogin::class.java))
                         //startActivity(Intent(this, MainActivity::class.java))
                         finish()
