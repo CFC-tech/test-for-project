@@ -32,6 +32,10 @@ class CakeLogin : AppCompatActivity() {
             startActivity(Intent(this, CakeCreateAccount::class.java))
         }
 
+        binding.txtForgetPassword.setOnClickListener {
+            startActivity(Intent(this, ForgetPassword::class.java))
+        }
+
         binding.btLogin.setOnClickListener {
             val email = binding.etEmail.text.toString().trim()
             val password = binding.etPassword.text.toString().trim()
@@ -82,6 +86,7 @@ class CakeLogin : AppCompatActivity() {
                             putString("email", email)
                             putString("password", password)
                             putBoolean("isChecked", true)
+                            apply()
                         }
                     } else {
                         val sharedPref = getSharedPreferences("SaveInfo", MODE_PRIVATE)

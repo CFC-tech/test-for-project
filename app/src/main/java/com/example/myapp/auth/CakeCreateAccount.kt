@@ -1,9 +1,11 @@
 package com.example.myapp.auth
 
+import android.content.Intent
 import android.net.NetworkCapabilities
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.edit
 import androidx.core.widget.addTextChangedListener
 import com.example.myapp.databinding.ActivityCreateAccountBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -68,7 +70,17 @@ class CakeCreateAccount : AppCompatActivity() {
             FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
-                        Toast.makeText(this, "Account created successfully for $name", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Registered successfully for $name", Toast.LENGTH_SHORT).show()
+                        val sharedPref = getSharedPreferences("SaveInfo", MODE_PRIVATE)
+                        sharedPref.edit {
+                            putString("email", email)
+                            putString("password", password)
+                            putBoolean("isChecked", true)
+                            apply()
+                        }
+                        startActivity(Intent(this, CakeLogin::class.java))
+                        //startActivity(Intent(this, MainActivity::class.java))
+                        finish()
                     } else {
                         Toast.makeText(this, "Account creation failed", Toast.LENGTH_SHORT).show()
                     }
