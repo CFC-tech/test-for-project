@@ -11,7 +11,7 @@
         android:id="@+id/series"
         android:icon="@drawable/series"/>
     <item android:title="Movie"
-        android:id="@+id/moive"
+        android:id="@+id/movie"
         android:icon="@drawable/movie"/>
     <item android:title="Setting"
         android:id="@+id/setting"

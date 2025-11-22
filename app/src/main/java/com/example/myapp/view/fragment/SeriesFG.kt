@@ -6,15 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.myapp.R
+import com.example.myapp.databinding.ActivityMainBinding
+import com.example.myapp.databinding.FragmentSeriesFGBinding
 
 class SeriesFG : Fragment() {
 
+    private lateinit var binding: FragmentSeriesFGBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_series_f_g, container, false)
+        binding = FragmentSeriesFGBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
 }
