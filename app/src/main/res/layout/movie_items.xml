@@ -23,6 +23,7 @@
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/metropolis_regular"
         android:text="Title"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/imgMovie"
         app:layout_constraintStart_toStartOf="@+id/imgMovie"

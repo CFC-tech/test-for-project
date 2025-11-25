@@ -30,6 +30,8 @@ class HomeFG : Fragment() {
         binding = FragmentHomeFGBinding.inflate(inflater, container, false)
         val layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.popularRV.layoutManager = layoutManager
+        val layoutManager2 = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        binding.UpcomingRV.layoutManager = layoutManager2
 
         var movie1 = Movie("edge", R.drawable.edge)
         var movie2 = Movie("family plan", R.drawable.family_plan)
@@ -46,6 +48,7 @@ class HomeFG : Fragment() {
 
         val movie_adapter = MovieAdapter(movielist)
         binding.popularRV.adapter = movie_adapter
+        binding.UpcomingRV.adapter = movie_adapter
 
         return binding.root
 

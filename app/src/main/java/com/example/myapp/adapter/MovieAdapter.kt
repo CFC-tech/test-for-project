@@ -20,8 +20,6 @@ class MovieAdapter (private val movielist: List<Movie>) : RecyclerView.Adapter<M
         viewType: Int
     ): MovieAdapter.MovieViewHolder {
         val view = View.inflate(parent.context, R.layout.movie_items, null)
-        //val view = LayoutInflater.from(parent.context)
-            //.inflate(R.layout.movie_items, parent, false)
                 return MovieViewHolder(view)
     }
 
