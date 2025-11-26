@@ -38,7 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:fontFamily="@font/metropolis_regular"
         android:text="Upcoming Movies"
         android:textColor="@color/black"
@@ -56,6 +56,31 @@
         app:layout_constraintEnd_toEndOf="@+id/popularRV"
         app:layout_constraintStart_toStartOf="@+id/popularRV"
         app:layout_constraintTop_toBottomOf="@+id/text_home1"
+        tools:itemCount="1"
+        tools:listitem="@layout/movie_items" />
+
+    <TextView
+        android:id="@+id/text_home2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/metropolis_regular"
+        android:text="Top Rated Movies"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="@+id/text_home1"
+        app:layout_constraintStart_toStartOf="@+id/text_home1"
+        app:layout_constraintTop_toBottomOf="@+id/UpcomingRV" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/TopRatedRV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        app:layout_constraintEnd_toEndOf="@+id/UpcomingRV"
+        app:layout_constraintStart_toStartOf="@+id/UpcomingRV"
+        app:layout_constraintTop_toBottomOf="@+id/text_home2"
         tools:itemCount="1"
         tools:listitem="@layout/movie_items" />
 

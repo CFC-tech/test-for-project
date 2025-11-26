@@ -32,13 +32,15 @@ class HomeFG : Fragment() {
         binding.popularRV.layoutManager = layoutManager
         val layoutManager2 = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.UpcomingRV.layoutManager = layoutManager2
+        val layoutManager3 = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        binding.TopRatedRV.layoutManager = layoutManager3
 
-        var movie1 = Movie("edge", R.drawable.edge)
-        var movie2 = Movie("family plan", R.drawable.family_plan)
-        var movie3 = Movie("playdate", R.drawable.playdate)
-        var movie4 = Movie("love", R.drawable.edge)
-        var movie5 = Movie("hate", R.drawable.family_plan)
-        var movie6 = Movie("fight", R.drawable.playdate)
+        var movie1 = Movie("Edge", R.drawable.edge)
+        var movie2 = Movie("Family Plan", R.drawable.family_plan)
+        var movie3 = Movie("Play Date", R.drawable.playdate)
+        var movie4 = Movie("12 Angry Men", R.drawable.angry_men)
+        var movie5 = Movie("Pulp Fiction", R.drawable.pulp_fiction)
+        var movie6 = Movie("Spirited Away", R.drawable.spirited_away)
         movielist.add(movie1)
         movielist.add(movie2)
         movielist.add(movie3)
@@ -49,6 +51,7 @@ class HomeFG : Fragment() {
         val movie_adapter = MovieAdapter(movielist, requireContext())
         binding.popularRV.adapter = movie_adapter
         binding.UpcomingRV.adapter = movie_adapter
+        binding.TopRatedRV.adapter = movie_adapter
 
         return binding.root
 
