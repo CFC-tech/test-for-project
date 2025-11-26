@@ -46,7 +46,7 @@ class HomeFG : Fragment() {
         movielist.add(movie5)
         movielist.add(movie6)
 
-        val movie_adapter = MovieAdapter(movielist)
+        val movie_adapter = MovieAdapter(movielist, requireContext())
         binding.popularRV.adapter = movie_adapter
         binding.UpcomingRV.adapter = movie_adapter
 
