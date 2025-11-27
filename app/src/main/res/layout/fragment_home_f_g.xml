@@ -1,14 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.fragment.HomeFG">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/text_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/metropolis_regular"
+        android:text="Popular Movies"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/popularRV"
+        android:layout_width="395dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_home"
+        tools:itemCount="1"
+        tools:listitem="@layout/movie_items" />
+
+    <TextView
+        android:id="@+id/text_home1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/metropolis_regular"
+        android:text="Upcoming Movies"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="@+id/text_home"
+        app:layout_constraintStart_toStartOf="@+id/text_home"
+        app:layout_constraintTop_toBottomOf="@+id/popularRV" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/UpcomingRV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        app:layout_constraintEnd_toEndOf="@+id/popularRV"
+        app:layout_constraintStart_toStartOf="@+id/popularRV"
+        app:layout_constraintTop_toBottomOf="@+id/text_home1"
+        tools:itemCount="1"
+        tools:listitem="@layout/movie_items" />
+
+    <TextView
+        android:id="@+id/text_home2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/metropolis_regular"
+        android:text="Top Rated Movies"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="@+id/text_home1"
+        app:layout_constraintStart_toStartOf="@+id/text_home1"
+        app:layout_constraintTop_toBottomOf="@+id/UpcomingRV" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/TopRatedRV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        app:layout_constraintEnd_toEndOf="@+id/UpcomingRV"
+        app:layout_constraintStart_toStartOf="@+id/UpcomingRV"
+        app:layout_constraintTop_toBottomOf="@+id/text_home2"
+        tools:itemCount="1"
+        tools:listitem="@layout/movie_items" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
