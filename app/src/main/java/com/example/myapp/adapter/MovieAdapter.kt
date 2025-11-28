@@ -9,6 +9,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.myapp.R
 import com.example.myapp.model.Movie
 
@@ -30,10 +31,11 @@ class MovieAdapter (private val movielist: List<Movie>, private var context: Con
 
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
         val movie = movielist[position]
-        holder.poster_image.setImageResource(movie.poster_path)
-        holder.movie_title.text = movie.title
+        val imageUrl = "https://image.tmdb.org/t/p/w500/${movie.results.get(position).poster_path}"
+        Glide.with(context).load(imageUrl).into(holder.poster_image)
+        holder.movie_title.text = movie.results.get(position).title
         holder.movie_Main.setOnClickListener {
-            Toast.makeText(context, "You clicked on ${movie.title}", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "You clicked on", Toast.LENGTH_SHORT).show()
         }
 
     }
