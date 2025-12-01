@@ -20,7 +20,7 @@ interface TmdbApi {
         @Header("accept") accept : String
     ): Response<Movie>
 
-    @GET("top_rated?language=en-US&page=1")
+    @GET("movie/top_rated?language=en-US&page=1")
     suspend fun getTopRatedMovies(
         @Header("Authorization") authorization: String,
         @Header("accept") accept: String

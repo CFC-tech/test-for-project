@@ -21,8 +21,6 @@ import kotlinx.coroutines.launch
 class HomeFG : Fragment() {
 
     private val apiKey = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlMjhjYmE4YjYxYTJlMTY0MmJkYjBkNjYwNTUxZjRhMSIsIm5iZiI6MTc2Mjk1MTM2Ny43MTUwMDAyLCJzdWIiOiI2OTE0ODBjNzNjZDgwY2UxN2YzYTNjNTkiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.S8iFq6XCYccqNPfHbSf_ItrBq31A5xfwxYOfqxBCuIY"
-    //private val apiKey = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlMjhjYmE4YjYxYTJlMTY0MmJkYjBkNjYwNTUxZjRhMSIsIm5iZiI6MTc2Mjk1MTM2Ny43MTUwMDAyLCJzdWIiOiI2OTE0ODBjNzNjZDgwY2UxN2YzYTNjNTkiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.S8iFq6XCYccqNPfHbSf_ItrBq31A5xfwxYOfqxBCuIY"
-   // private val apiKey = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlMjhjYmE4YjYxYTJlMTY0MmJkYjBkNjYwNTUxZjRhMSIsIm5iZiI6MTc2Mjk1MTM2Ny43MTUwMDAyLCJzdWIiOiI2OTE0ODBjNzNjZDgwY2UxN2YzYTNjNTkiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.S8iFq6XCYccqNPfHbSf_ItrBq31A5xfwxYOfqxBCuIY"
 
 
     private lateinit var binding: FragmentHomeFGBinding
@@ -52,16 +50,19 @@ class HomeFG : Fragment() {
 
 
         lifecycleScope.launch {
-            val movielist = repository.fetchPopularMovies(apiKey)
-            Log.d("Popular",movielist.toString())
+            val popularMovielist = repository.fetchPopularMovies(apiKey)
+            val upcomingMovieList = repository.fetchUpcomingMovies(apiKey)
+            val topRatedMovieList = repository.fetchTopRatedMovies(apiKey)
+
+            val popularAdapter = MovieAdapter(popularMovielist?: emptyList(), requireContext())
+            binding.popularRV.adapter = popularAdapter
+
+            val upcomingAdapter = MovieAdapter(upcomingMovieList?: emptyList(), requireContext())
+            binding.UpcomingRV.adapter = upcomingAdapter
+
+            val topRatedAdapter = MovieAdapter(topRatedMovieList?: emptyList(), requireContext())
+            binding.TopRatedRV.adapter = topRatedAdapter
         }
-
-
-
-        val movie_adapter = MovieAdapter(movielist, requireContext())
-        binding.popularRV.adapter = movie_adapter
-        binding.UpcomingRV.adapter = movie_adapter
-        binding.TopRatedRV.adapter = movie_adapter
 
         return binding.root
 

@@ -18,14 +18,16 @@
 
     <TextView
         android:id="@+id/txtMovieTitle"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:layout_marginTop="4dp"
         android:layout_marginBottom="4dp"
+        android:singleLine="true"
         android:fontFamily="@font/metropolis_regular"
         android:text="Title"
-        android:textSize="12sp"
         android:textColor="@color/cardview_light_background"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/imgMovie"
         app:layout_constraintStart_toStartOf="@+id/imgMovie"
