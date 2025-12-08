@@ -1,6 +1,8 @@
 package com.example.myapp.adapter
 
 import android.content.Context
+import android.content.Intent
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,6 +15,7 @@ import com.bumptech.glide.Glide
 import com.example.myapp.R
 import com.example.myapp.model.Movie
 import com.example.myapp.model.Result
+import com.example.myapp.view.MovieDetails
 
 class MovieAdapter (private val movielist: List<Result>, private var context: Context) : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
     class MovieViewHolder (view: View) : RecyclerView.ViewHolder(view) {
@@ -36,7 +39,12 @@ class MovieAdapter (private val movielist: List<Result>, private var context: Co
         Glide.with(context).load(imageUrl).into(holder.poster_image)
         holder.movie_title.text = movie.title
         holder.movie_Main.setOnClickListener {
-            Toast.makeText(context, "You clicked on", Toast.LENGTH_SHORT).show()
+            val intent = Intent(context, MovieDetails::class.java)
+            val bundle = Bundle()
+            bundle.putParcelable("movie_data", movie)
+            intent.putExtras(bundle)
+            context.startActivity(intent)
+
         }
 
     }
