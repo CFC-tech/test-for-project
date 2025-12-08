@@ -24,12 +24,10 @@ class MovieDetails : AppCompatActivity() {
 
 
         val posterUrl = movie?.poster_path
-        val backdropUrl = movie?.backdrop_path
         val posterImg = "https://image.tmdb.org/t/p/w500$posterUrl"
-        val backdropImg = "https://image.tmdb.org/t/p/w500$backdropUrl"
+
 
         Glide.with(this).load(posterImg).into(binding.imgPoster)
-        Glide.with(this).load(backdropImg).into(binding.imgBackdrop)
 
 
 
