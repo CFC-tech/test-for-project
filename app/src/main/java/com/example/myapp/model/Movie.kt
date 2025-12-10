@@ -1,6 +1,9 @@
 package com.example.myapp.model
 
 data class Movie(
-    var title: String,
-    var poster_path : Int
+    val dates: Dates,
+    val page: Int,
+    val results: List<Result>,
+    val total_pages: Int,
+    val total_results: Int
 )
